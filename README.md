@@ -1,7 +1,7 @@
 ## vacinas
 ### Desafio orange para ingresso na Zup
 
-Procedimentos para rodar a aplicação
+###### Procedimentos para rodar a aplicação
     1. Baixe o projeto e abra-o na sua IDE preferida
     2. Baixe o arquivo com o dump do banco de dados e rode no seu mysql
     3. Obtenha as credenciais e detalhes de conexão do seu SGBD 
