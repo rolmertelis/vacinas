@@ -2,10 +2,10 @@
 ### Desafio orange para ingresso na Zup
 
 1. Procedimentos para rodar a aplicação
-    1. Baixe o projeto e abra-o na sua IDE preferida
-    2. Baixe o arquivo com o dump do banco de dados e rode no seu mysql
-    3. Obtenha as credenciais e detalhes de conexão do seu SGBD 
-    4. Utilize as informações obtidas no passo 3 para configurar o arquivo application.properties
+    a. Baixe o projeto e abra-o na sua IDE preferida
+    b. Baixe o arquivo com o dump do banco de dados e rode no seu mysql
+    c. Obtenha as credenciais e detalhes de conexão do seu SGBD 
+    d. Utilize as informações obtidas no passo 3 para configurar o arquivo application.properties
 
 Exemplo do arquivo application.properties:
     
