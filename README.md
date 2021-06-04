@@ -1,5 +1,5 @@
 ## vacinas
-### Desafio orange para ingresso na Zup
+### Desafio Orange Talents, para ingresso na Zup
 
 #### Procedimentos para rodar a aplicação
     1. Baixe o projeto e abra-o na sua IDE preferida
