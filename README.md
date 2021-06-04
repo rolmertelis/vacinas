@@ -8,7 +8,7 @@
     4. Utilize as informações obtidas no passo 3 para configurar o arquivo application.properties
 
 ###### Exemplo do arquivo application.properties:
-    ###Utilize o modelo abaixo, para definir o seu arquivo de propriedades, para a conexão com o sgbd <<< NÃO COLE E COPIE SEMPLESMENTE >>>
+#### Utilize o modelo abaixo, para definir o seu arquivo de propriedades, para a conexão com o sgbd <<< NÃO COLE E COPIE SEMPLESMENTE >>>
     #Configurações do Banco de Dados
     #spring.jpa.hibernate.ddl-auto=update
     spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:[porta]/[nome_do_squema]
