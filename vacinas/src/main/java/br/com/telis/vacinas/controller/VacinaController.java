@@ -1,13 +1,13 @@
 package br.com.telis.vacinas.controller;
 
 
-import br.com.telis.vacinas.controller.form.UsuarioForm;
+
 import br.com.telis.vacinas.controller.form.VacinaForm;
-import br.com.telis.vacinas.dto.UsuarioDTO;
+
 import br.com.telis.vacinas.dto.VacinaDTO;
-import br.com.telis.vacinas.model.Usuario;
+
 import br.com.telis.vacinas.model.Vacina;
-import br.com.telis.vacinas.repository.VacinaRepository;
+
 import br.com.telis.vacinas.service.VacinaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,20 +1,17 @@
 package br.com.telis.vacinas.dto;
-
+import br.com.telis.vacinas.model.Aplicacao;
 import br.com.telis.vacinas.model.Usuario;
-import lombok.Getter;
-import lombok.Setter;
+
+import java.util.List;
+
 
 public class UsuarioDTO{
-    @Getter @Setter
     private Integer id;
-    @Getter @Setter
     private String nome;
-    @Getter @Setter
     private String email;
-    @Getter @Setter
     private String dataNascimento;
-    @Getter @Setter
     private String cpf;
+    private List<Aplicacao> aplicacoes;
 
     public UsuarioDTO() {
 
@@ -26,5 +23,56 @@ public class UsuarioDTO{
         this.email = usuario.getEmail();
         this.dataNascimento = usuario.getNascimento();
         this.cpf = usuario.getCpf();
+        this.aplicacoes = usuario.getAplicacoes();
+
+
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public List<Aplicacao> getAplicacoes() {
+        return aplicacoes;
+    }
+
+    public void setAplicacoes(List<Aplicacao> aplicacoes) {
+        this.aplicacoes = aplicacoes;
     }
 }

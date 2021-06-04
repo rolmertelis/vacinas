@@ -1,5 +1,6 @@
 package br.com.telis.vacinas.controller.form;
 
+import br.com.telis.vacinas.model.Aplicacao;
 import br.com.telis.vacinas.model.Vacina;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,6 +9,7 @@ import lombok.Setter;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 public class VacinaForm {
     @Getter @Setter @NotNull @NotEmpty @NotBlank
@@ -20,6 +22,8 @@ public class VacinaForm {
     private Integer doses;
     @Getter @Setter
     private Integer diasentredoses;
+    @Getter @Setter
+    private List<Aplicacao> aplicacoes;
 
     public VacinaForm() {
     }
@@ -30,6 +34,8 @@ public class VacinaForm {
         this.periodicidade = vacina.getPeriodicidade();
         this.doses = vacina.getDoses();
         this.diasentredoses = vacina.getDiasentredoses();
+        this.aplicacoes = vacina.getAplicacoes();
+
     }
 
     public Vacina criarVacinaModel(VacinaForm vacinaForm){
