@@ -2,6 +2,7 @@ package br.com.telis.vacinas.controller;
 
 import br.com.telis.vacinas.controller.form.UsuarioForm;
 import br.com.telis.vacinas.dto.UsuarioDTO;
+import br.com.telis.vacinas.dto.UsuarioListaDTO;
 import br.com.telis.vacinas.model.Usuario;
 import br.com.telis.vacinas.service.UsuarioService;
 import org.springframework.data.domain.Page;
@@ -64,26 +65,28 @@ public class UsuarioController {
     @GetMapping (value = "/sempaginacao")
     //Exemplo de URI
     //localhost:8080/usuario/sempaginacao
-    public List<Usuario> FindallSemPaginacao() {
+    public List<UsuarioDTO> FindallSemPaginacao() {
         return usuarioService.retornaLista();
     }
 
     @GetMapping(value = "/paginacaosimples")
     //Exemplo de URI
     //localhost:8080/usuario/paginacaosimples
-    public Page<Usuario> FindallComPaginacaoFixa() {
+    public Page<UsuarioDTO> FindallComPaginacaoFixa() {
         return usuarioService.retornaLista(PageRequest.of(0,10));
     }
 
     @GetMapping (value = "/paginacaocustom")
     //Exemplo de URI
     //Sem ordenação
-    //localhost:8080/usuario/paginacaocustom?page=1&size=5
+    //localhost:8080/usuario/paginacaocustom?page=0&size=5&sort=id&
     //Com ordenação
     //localhost:8080/usuario/paginacaocustom?sort=nome,asc
-    public Page<Usuario> FindallComPaginacaoCustom(Pageable pageable) {
+    public Page<UsuarioDTO> FindallComPaginacaoCustom(Pageable pageable) {
         return usuarioService.retornaLista(pageable);
     }
+
+
 
     @GetMapping (value = "/comquery")
     //Exemplo de URI
@@ -91,7 +94,7 @@ public class UsuarioController {
     //localhost:8080/usuario/paginacaocustom?page=1&size=5
     //Com ordenação
     //localhost:8080/usuario/paginacaocustom?sort=nome,asc
-    public Page<Usuario> FindallComPaginacaoCustomQuery(Pageable pageable) {
+    public Page<UsuarioDTO> FindallComPaginacaoCustomQuery(Pageable pageable) {
         return usuarioService.retornaLista(pageable);
     }
 

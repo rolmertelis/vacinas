@@ -1,11 +1,13 @@
 package br.com.telis.vacinas.dto;
 import br.com.telis.vacinas.model.Aplicacao;
 import br.com.telis.vacinas.model.Usuario;
-
 import java.util.List;
 
 
+//Finalidade: Produzir objetos apropriados para serem entregues nos responses
+//preservando a integridade dos objetos de modelo de negócio
 public class UsuarioDTO{
+    public final String mensagem = "Este é um objeto DTO";
     private Integer id;
     private String nome;
     private String email;

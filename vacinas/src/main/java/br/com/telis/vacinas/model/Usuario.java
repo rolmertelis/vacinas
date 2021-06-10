@@ -19,6 +19,7 @@ public class Usuario {
     private String nascimento;
     private String cpf;
 
+    //Um usuário pode tomar várias vacinas
     @OneToMany(mappedBy = "usuario")
     private List<Aplicacao> aplicacoes;
 

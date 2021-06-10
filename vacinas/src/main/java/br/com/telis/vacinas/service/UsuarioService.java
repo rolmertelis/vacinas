@@ -2,10 +2,12 @@ package br.com.telis.vacinas.service;
 
 import br.com.telis.vacinas.controller.form.UsuarioForm;
 import br.com.telis.vacinas.dto.UsuarioDTO;
+import br.com.telis.vacinas.dto.UsuarioListaDTO;
 import br.com.telis.vacinas.model.Usuario;
 import br.com.telis.vacinas.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -38,13 +40,19 @@ public class UsuarioService {
     }
 
     //Sem paginação menhuma
-    public List<Usuario> retornaLista(){
-        return  usuarioRepository.findAll();
+    public List<UsuarioDTO> retornaLista(){
+        var usuarioListaDTO = new UsuarioListaDTO();
+        var listaUsuarioModel = usuarioRepository.findAll();
+        var listausuarioDTO = usuarioListaDTO.criaListaUsuarioDTO(listaUsuarioModel);
+        return  listausuarioDTO;
     }
 
     //Com paginação pré definida no controller
-    public Page<Usuario> retornaLista(Pageable pageble){
-        return usuarioRepository.findAll(pageble);
+    public Page<UsuarioDTO> retornaLista(Pageable pageble){
+        var usuarioListaDTO = new UsuarioListaDTO();
+        var pageUsuarioModel = usuarioRepository.findAll(pageble);
+        var pageaUsuarioDTO = usuarioListaDTO.criaPageUsuarioDTO(pageUsuarioModel);
+        return pageaUsuarioDTO;
     }
 
 
