@@ -1,9 +1,12 @@
 package br.com.telis.vacinas.service;
 
 import br.com.telis.vacinas.controller.form.UsuarioForm;
+import br.com.telis.vacinas.dto.UsuarioDTO;
 import br.com.telis.vacinas.model.Usuario;
 import br.com.telis.vacinas.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,9 +37,16 @@ public class UsuarioService {
         return usuarioRepository.save(usuarioExistente);
     }
 
-
+    //Sem paginação menhuma
     public List<Usuario> retornaLista(){
-        return usuarioRepository.findAll();
+        return  usuarioRepository.findAll();
     }
+
+    //Com paginação pré definida no controller
+    public Page<Usuario> retornaLista(Pageable pageble){
+        return usuarioRepository.findAll(pageble);
+    }
+
+
 
 }

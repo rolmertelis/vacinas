@@ -24,8 +24,6 @@ public class UsuarioDTO{
         this.dataNascimento = usuario.getNascimento();
         this.cpf = usuario.getCpf();
         this.aplicacoes = usuario.getAplicacoes();
-
-
     }
 
     public Integer getId() {
