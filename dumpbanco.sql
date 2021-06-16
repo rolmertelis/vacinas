@@ -64,7 +64,7 @@ CREATE TABLE `usuario` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   UNIQUE KEY `cpf_UNIQUE` (`cpf`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=big5;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'joao','joao@gmail.com','18','12345678910'),(2,'jose','jose@gmail.com','25','12345678911'),(3,'maria','maria@gmail.com','30','12345678912'),(4,'Juca','juca@gmail.com','40','12345678913'),(5,'Madalena','madalena@gmail.com','25/05/1974','322211122'),(7,'Marialva','marialva@gmail.com','25/05/1984','322211123'),(8,'Januario','januario@gmail.com','25/05/1994','322211144'),(9,'Luis','luis@gmail.com','25/05/1993','322211155'),(13,'Luis','abigobaldo@gmail.com','25/05/1993','7777789652'),(14,'Outro usuario','outrousuario@gmail.com','25/05/1993','11111111115'),(15,'scorpion renew','scorpion@gmail.com','25/05/1993','11111111118'),(19,'jacobino','jacobino@gmail.com','25/05/1993','11111111117'),(20,'juliete mexida','juliete@gmail.com','25/05/1984','11111111114'),(22,'Jamelina','Jamelina@gmail.com','25/05/1984','11111111121'),(24,'siberia','siberia@gmail.com','25/05/1993','11111111129');
+INSERT INTO `usuario` VALUES (1,'joao','joao@gmail.com','18','12345678910'),(2,'jose','jose@gmail.com','25','12345678911'),(3,'maria','maria@gmail.com','30','12345678912'),(4,'Juca','juca@gmail.com','40','12345678913'),(5,'Madalena','madalena@gmail.com','25/05/1974','322211122'),(7,'Marialva','marialva@gmail.com','25/05/1984','322211123'),(8,'Januario','januario@gmail.com','25/05/1994','322211144'),(9,'Luis','luis@gmail.com','25/05/1993','322211155'),(13,'Luis','abigobaldo@gmail.com','25/05/1993','7777789652'),(14,'Outro usuario','outrousuario@gmail.com','25/05/1993','11111111115'),(15,'scorpion renew','scorpion@gmail.com','25/05/1993','11111111118'),(19,'jacobino','jacobino@gmail.com','25/05/1993','11111111117'),(20,'juliete mexida','juliete@gmail.com','25/05/1984','11111111114'),(22,'Jamelina','Jamelina@gmail.com','25/05/1984','11111111121'),(24,'siberia','siberia@gmail.com','25/05/1993','11111111129'),(25,'Thalyta Lima','thalytalima@gmail.com','25/05/1993','11111111131');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -116,4 +116,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-04 20:13:42
+-- Dump completed on 2021-06-16 11:19:06
