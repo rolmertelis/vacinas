@@ -7,7 +7,7 @@ import java.util.List;
 //Finalidade: Produzir objetos apropriados para serem entregues nos responses
 //preservando a integridade dos objetos de modelo de negócio
 public class UsuarioDTO{
-    public final String mensagem = "Este é um objeto DTO";
+    public final String mensagem = "Este é um objeto DTO. Pode não conter tudo que há no modelo de negócio";
     private Integer id;
     private String nome;
     private String email;

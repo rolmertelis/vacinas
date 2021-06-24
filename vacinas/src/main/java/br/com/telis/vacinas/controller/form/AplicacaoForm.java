@@ -1,6 +1,7 @@
 package br.com.telis.vacinas.controller.form;
 
 import br.com.telis.vacinas.model.Aplicacao;
+import br.com.telis.vacinas.model.Usuario;
 import br.com.telis.vacinas.model.Vacina;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,8 +18,10 @@ public class AplicacaoForm {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private Integer usuario;
     private String dataaplicacao;
     private String obs;
+    private Integer vacina;
 
 
     public Aplicacao criarAplicacaoModel(AplicacaoForm aplicacaoForm){

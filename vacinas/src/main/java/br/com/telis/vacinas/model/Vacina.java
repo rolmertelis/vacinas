@@ -1,8 +1,6 @@
 package br.com.telis.vacinas.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,25 +15,17 @@ public class Vacina {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter @Setter
     private Integer id;
-    @Getter @Setter
     private String nome;
-    @Getter @Setter
     private String sigla;
-    @Getter @Setter
     private Integer periodicidade;
-    @Getter @Setter
     private Integer doses;
-    @Getter @Setter
     private Integer diasentredoses;
-
     @JsonIgnore
-    @OneToMany(mappedBy = "vacina", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "vacina", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Aplicacao> aplicacoes;
 
     public Vacina() {
-
     }
 
     public Vacina(Integer id, String nome, String sigla, Integer periodicidade, Integer doses, Integer diasentredoses, List<Aplicacao> aplicacoes) {
@@ -103,4 +93,6 @@ public class Vacina {
     public void setAplicacoes(List<Aplicacao> aplicacoes) {
         this.aplicacoes = aplicacoes;
     }
+
+
 }

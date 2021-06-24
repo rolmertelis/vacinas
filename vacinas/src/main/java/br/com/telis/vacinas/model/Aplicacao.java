@@ -3,6 +3,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
+
+
 @Entity
 @Table(name="aplicacao")
 public class Aplicacao {
@@ -13,21 +15,19 @@ public class Aplicacao {
     private Integer id;
 
     @JsonIgnore
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn( name="usuario_id")
     private Usuario usuario;
 
     private String dataaplicacao;
     private String obs;
 
-    //@JsonIgnore
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "vacina_id")
     private Vacina vacina;
 
-
     public Aplicacao() {
-
     }
 
     public Aplicacao(Integer id, Usuario usuario, String dataaplicacao, String obs, Vacina vacina) {
