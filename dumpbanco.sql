@@ -35,7 +35,7 @@ CREATE TABLE `aplicacao` (
   KEY `fk_aplicacao_1_idx` (`vacina_id`),
   CONSTRAINT `fk_aplicacao_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`),
   CONSTRAINT `fk_aplicacao_vacina` FOREIGN KEY (`vacina_id`) REFERENCES `vacina` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=big5;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `aplicacao` (
 
 LOCK TABLES `aplicacao` WRITE;
 /*!40000 ALTER TABLE `aplicacao` DISABLE KEYS */;
-INSERT INTO `aplicacao` VALUES (1,1,'25/05/1964','Uma obs',1),(2,1,'25/05/1965','Outra obs',2);
+INSERT INTO `aplicacao` VALUES (1,1,'25/05/1964','Uma obs',1),(2,1,'25/05/1965','Outra obs',2),(3,7,'01/05/2011','teste de inc com status created',2),(4,7,'01/05/2011','teste de inc com status created',2),(5,9,'01/05/2011','teste de inc para usuario 9',1);
 /*!40000 ALTER TABLE `aplicacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -116,4 +116,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-16 11:19:06
+-- Dump completed on 2021-06-25 18:28:58
