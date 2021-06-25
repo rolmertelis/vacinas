@@ -6,6 +6,7 @@ import br.com.telis.vacinas.model.Vacina;
 
 
 public class AplicacaoDTO {
+    private final String mensagem = "objeto DTO, pode ser diferente do modelo";
     private Integer id;
     private Usuario usuario;
     private String dataaplicacao;

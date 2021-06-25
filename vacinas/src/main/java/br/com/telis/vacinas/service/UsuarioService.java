@@ -25,7 +25,7 @@ public class UsuarioService {
     }
 
     public Usuario retornaUm(Integer id){
-        Usuario encontrado = usuarioRepository.getOne(id);
+        Usuario encontrado = usuarioRepository.findById(id).get();
         return encontrado;
     }
 

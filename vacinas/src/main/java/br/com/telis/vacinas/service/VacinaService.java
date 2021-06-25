@@ -15,7 +15,7 @@ public class VacinaService {
     }
 
     public Vacina retornaUm(Integer id){
-        return vacinaRepository.getOne(id);
+        return vacinaRepository.findById(id).get();
     }
 
 }

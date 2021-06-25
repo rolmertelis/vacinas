@@ -17,4 +17,8 @@ public class AplicacaoService {
         return aplicacaoRepository.findById(id).get();
     }
 
+    public Aplicacao aplicarVacina(Aplicacao aplicacao){
+        return aplicacaoRepository.save(aplicacao);
+    }
+
 }
