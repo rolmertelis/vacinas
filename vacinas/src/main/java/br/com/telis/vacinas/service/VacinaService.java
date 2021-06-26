@@ -1,5 +1,6 @@
 package br.com.telis.vacinas.service;
 
+import br.com.telis.vacinas.exception.ApiRequestException;
 import br.com.telis.vacinas.model.Vacina;
 import br.com.telis.vacinas.repository.VacinaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,11 @@ public class VacinaService {
     }
 
     public Vacina retornaUm(Integer id){
-        return vacinaRepository.findById(id).get();
+        try {
+            Vacina encontrado = vacinaRepository.findById(id).get();
+            return encontrado;
+        }catch(Exception e){
+            throw new ApiRequestException("vacina não encontrada");
+        }
     }
-
 }

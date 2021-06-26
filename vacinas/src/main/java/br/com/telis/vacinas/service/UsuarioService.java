@@ -3,14 +3,16 @@ package br.com.telis.vacinas.service;
 import br.com.telis.vacinas.controller.form.UsuarioForm;
 import br.com.telis.vacinas.dto.UsuarioDTO;
 import br.com.telis.vacinas.dto.UsuarioListaDTO;
+import br.com.telis.vacinas.exception.ApiRequestException;
 import br.com.telis.vacinas.model.Usuario;
 import br.com.telis.vacinas.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 @Service
@@ -25,8 +27,13 @@ public class UsuarioService {
     }
 
     public Usuario retornaUm(Integer id){
-        Usuario encontrado = usuarioRepository.findById(id).get();
-        return encontrado;
+        try {
+            Usuario encontrado = usuarioRepository.findById(id).get();
+            return encontrado;
+        }catch(Exception e){
+            throw new ApiRequestException("usuário não encontrado");
+        }
+
     }
 
     public Usuario atualizaUmUsuario(Integer id, UsuarioForm usuarioForm){
