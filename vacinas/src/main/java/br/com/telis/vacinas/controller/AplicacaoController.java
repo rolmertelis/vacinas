@@ -18,6 +18,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/aplicacao")
@@ -30,8 +31,6 @@ public class AplicacaoController {
     @Autowired
     UsuarioService usuarioService;
 
-    //O método retorna um ResponseEntity - classe que representa um response http com
-    //tudo que tem direito: código de status, cabeçalhos e corpo
     @GetMapping(path = {"/{id}"})
     public ResponseEntity<AplicacaoDTO> retornaUm (@PathVariable Integer id, UriComponentsBuilder uriComponentsBuilder) {
 
@@ -46,6 +45,22 @@ public class AplicacaoController {
         }
     }
 
+
+    //O método retorna um ResponseEntity - classe que representa um response http com
+    //tudo que tem direito: código de status, cabeçalhos e corpo
+    @GetMapping
+    public ResponseEntity instrucoes () {
+        Map<String, String> map = Map.ofEntries(
+                Map.entry("Ver uma aplicação - GET", "/aplicacao/id_da_aplicacao"),
+                Map.entry("Inserir uma aplicacao - POST", "/aplicacao + json"),
+                Map.entry("Atualizar uma aplicacao - POST", "/aplicacao + json")
+
+        ) ;
+        return ResponseEntity.status(HttpStatus.FOUND).body(map);
+    }
+
+    //Anotar o parâmetro do método com @requestoBody, indica que o corpo do request http será automaticamente
+    //desserializado em um objeto java, desde que os formatos sejam coincidentes
     @PostMapping
     public ResponseEntity<AplicacaoDTO> aplicaVacina(@RequestBody @Valid AplicacaoForm aplicacaoForm, UriComponentsBuilder ucb){
             Usuario usuarioPeloId = usuarioService.retornaUm(aplicacaoForm.getUsuario());
